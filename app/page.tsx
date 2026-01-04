@@ -12,7 +12,7 @@ export default function Page() {
         <div className="max-w-5xl text-center">
           <h1 className="text-6xl md:text-7xl font-bold leading-tight">Atleen Jose</h1>
           <p className="mt-4 text-xl text-gray-400">
-            Business Intelligence & Analytics · AI · Data Engineering
+            Business Intelligence & Analytics · AI · Backend Data Systems
           </p>
           <p className="mt-10 text-2xl md:text-3xl max-w-3xl text-gray-300 mx-auto">
             I design analytics systems, build data pipelines, and apply AI to transform raw data into actionable insights.
