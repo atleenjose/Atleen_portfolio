@@ -49,6 +49,7 @@ export default function Page() {
             <ProjectCard
               title="Stakeholder Decision Frameworks"
               description="Translate ambiguous stakeholder needs into structured analysis plans."
+              href="/stakeholder-framework"
             />
           </div>
         </div>

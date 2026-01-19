@@ -15,7 +15,12 @@ export default function AnalyticsPage() {
 
           <div className="space-y-20">
             {/* Dashboard 1 */}
-            <div className="border border-gray-700 rounded-2xl p-8">
+            <div className="
+  bg-neutral-900/60 backdrop-blur
+  border border-white/10
+  rounded-2xl p-10
+  hover:border-white/30 transition-all
+">
               <h2 className="text-3xl font-semibold mb-4">Credit Card Customer Retention</h2>
               <p className="text-gray-300 mb-7 max-w-5xl">
                 A retention-focused analytics dashboard comparing customers who churn with those who stay, highlighting behavioral and demographic drivers of attrition.
@@ -29,7 +34,12 @@ export default function AnalyticsPage() {
             </div>
 
             {/* Dashboard 2 */}
-            <div className="border border-gray-700 rounded-2xl p-8">
+            <div className="
+  bg-neutral-900/60 backdrop-blur
+  border border-white/10
+  rounded-2xl p-10
+  hover:border-white/30 transition-all
+">
             <h2 className="text-3xl font-semibold mb-4">
                 Sales Quantity Analysis (2022–2023)
             </h2>

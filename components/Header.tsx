@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-black bg-opacity-95 backdrop-blur text-white z-50 p-4 flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-xl border-b border-white/10 backdrop-blur text-white z-50 p-4 flex justify-between items-center">
       {/* LOGO / NAME */}
       <Link href="/" className="font-bold text-xl">
         Atleen Jose Portfolio
