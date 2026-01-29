@@ -42,9 +42,9 @@ export default function Page() {
               description="Build reliable ETL and ELT pipelines using Python, BigQuery, Google Cloud Dataflow, and more."
             />
             <ProjectCard
-              title="AI & NLP Systems"
+              title="My Projects"
               description="Apply NLP and LLMs to search, summarize, and extract insights from unstructured data, bridging traditional analytics with AI."
-              href="/ai-nlp"
+              href="/ai-nlp-systems"
             />
             <ProjectCard
               title="Stakeholder Decision Frameworks"
