@@ -44,6 +44,15 @@ export default function StakeholderDecisionFrameworkPage() {
                 define success metrics, and create planning artifacts such as
                 requirements, KPI definitions, and dashboard mockups.
               </p>
+               <a
+          href="/Stakeholder requirements CSOAF.pdf"
+          target="_blank"
+          className="inline-block mt-2 text-sm text-gray-400
+             hover:text-white transition
+             underline underline-offset-4"
+>
+          View Stakeholer Requirements Document
+        </a>
             </div>
 
             <div className="
@@ -53,7 +62,7 @@ export default function StakeholderDecisionFrameworkPage() {
   hover:border-white/30 transition
 ">
           <span className="text-xs text-gray-500 uppercase tracking-wider">
-  Step 1
+  Step 2
 </span>
 
               <h3 className="text-xl font-medium mb-3">
@@ -63,6 +72,15 @@ export default function StakeholderDecisionFrameworkPage() {
                 Evaluated available datasets to determine relevance, identify
                 gaps, and assess feasibility of addressing business questions.
               </p>
+              <a
+          href="/Data Quality and Feasibility Assessment.pdf"
+          target="_blank"
+          className="inline-block mt-2 text-sm text-gray-400
+             hover:text-white transition
+             underline underline-offset-4"
+>
+          View Data Exploration and Feasibility Document
+        </a>
             </div>
           </div>
         </div>

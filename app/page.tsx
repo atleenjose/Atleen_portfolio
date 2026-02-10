@@ -40,6 +40,7 @@ export default function Page() {
             <ProjectCard
               title="Data Pipelines"
               description="Build reliable ETL and ELT pipelines using Python, BigQuery, Google Cloud Dataflow, and more."
+              href="/data-pipelines"
             />
             <ProjectCard
               title="My Projects"
