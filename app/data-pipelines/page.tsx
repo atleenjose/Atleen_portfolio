@@ -1,54 +1,40 @@
-"use client";
+// app/data-pipelines/page.tsx
 import Link from "next/link";
 
 type Project = {
   title: string;
   slug: string;
-  shortDescription: string;
+  shortDesc: string;
   image?: string;
 };
 
 const projects: Project[] = [
   {
-    title: "Predicting Chatbot Conversation Cost with KNN",
-    slug: "chatbot-knn",
-    shortDescription: "Estimate chatbot conversation costs using KNN regression on early interactions.",
+    slug: "chatbot-cost-knn",
+    title: "Predicting Chatbot Conversation Cost",
+    shortDesc: "KNN regression to predict chatbot conversation cost using early interaction signals.",
     image: "/images/chatbot_knn.png",
-  },
-  {
-    title: "KNN Regression - Housing Prices",
-    slug: "housing-knn",
-    shortDescription: "Predict housing prices using KNN regression with normalized features and RMSE tuning.",
-    image: "/images/housing_knn.png",
-  },
-  {
-    title: "Customer Churn Prediction with KNN",
-    slug: "churn-knn",
-    shortDescription: "Predict customer churn using KNN with normalized features and distance-based classification.",
-    image: "/images/churn_knn.png",
   },
 ];
 
-export default function DataPipelinesHub() {
+export default function DataPipelinesPage() {
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Data Pipeline Projects</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <h1 className="text-4xl font-bold mb-6">Data Pipeline Projects</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/data-pipelines/${project.slug}`}
-            className="border rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center bg-white"
-          >
-            {project.image && (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="mb-4 w-full h-48 object-cover rounded"
-              />
-            )}
-            <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-gray-600">{project.shortDescription}</p>
+          <Link key={project.slug} href={`/data-pipelines/${project.slug}`}>
+            <div className="cursor-pointer rounded-xl shadow-md p-6 hover:shadow-xl transition">
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover rounded mb-4"
+                />
+              )}
+              <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+              <p className="text-gray-600">{project.shortDesc}</p>
+            </div>
           </Link>
         ))}
       </div>

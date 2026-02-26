@@ -29,7 +29,6 @@ export default function AiNlpSystemsPage() {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 const [zoomOrigin, setZoomOrigin] = useState<{ x: number; y: number }>({ x: 50, y: 50 });
 
-
   const handleSend = () => {
     if (!input.trim()) return;
 
@@ -54,12 +53,12 @@ const [zoomOrigin, setZoomOrigin] = useState<{ x: number; y: number }>({ x: 50, 
     - Performed data cleaning, validation, and transformation for institutional datasets
     - Created dashboards and reports using Tableau Desktop and Tableau Prep
     - Supported academic and administrative teams with data-driven insights
-    - Technologies: Excel, Tableau Desktop, Tableau Prep
+    - Technologies: Excel, Tableau Desktop, Tableau Prep, IBM Cognos Analytics, SQL
         `,
     },
     {
       id: 1,
-      name: "Altanfeethi",
+      name: "Simelabs",
       domain: "HR Chatbot",
       dates: "03/2025 – 08/2025",
       shortDesc: "Rasa AI-powered WhatsApp chatbot for HR support.",
@@ -73,8 +72,8 @@ const [zoomOrigin, setZoomOrigin] = useState<{ x: number; y: number }>({ x: 50, 
     },
     {
       id: 2,
-      name: "Oxylym",
-      domain: "Conversational AI",
+      name: "Simelabs",
+      domain: "Conversational AI Platform",
       dates: "01/2023 – 08/2025",
       shortDesc: "Multilingual AI chatbots on Oxylym platform.",
       details: `
@@ -87,7 +86,7 @@ const [zoomOrigin, setZoomOrigin] = useState<{ x: number; y: number }>({ x: 50, 
     },
     {
       id: 3,
-      name: "COROB",
+      name: "Simelabs",
       domain: "Analytics Dashboard",
       dates: "10/2022 – 12/2022",
       shortDesc: "Admin dashboard for customer platform management.",
@@ -112,8 +111,8 @@ The primary goal was to provide visibility into platform usage and support opera
     },
     {
       id: 4,
-      name: "Structured Data SEO",
-      domain: "Data Processing",
+      name: "Simelabs",
+      domain: "Structures Data SEO- Data Processing",
       dates: "08/2023 – 09/2023",
       shortDesc: "Ingested query files using web scraping.",
       details: `
@@ -136,7 +135,7 @@ The primary goal was to ensure scalability, accuracy, and reliability of SEO dat
     },
     {
       id: 5,
-      name: "BPA",
+      name: "Simelabs",
       domain: "E-commerce App",
       dates: "01/2022 – 10/2022",
       shortDesc: "Android app for bulk procurement.",
@@ -160,6 +159,8 @@ Key focus areas included:
   ]);
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  
 
   useEffect(() => {
     if (!selectedProject) {
@@ -207,13 +208,13 @@ hover:bg-gray-100
       </section>
 
     {/* Chatbot Introduction */}
-<section className="max-w-2xl mx-auto mb-6 text-center">
-  <h2 className="text-3xl font-bold text-gray-900 mb-3">
+{/* <section className="max-w-2xl mx-auto mb-6 text-center"> */}
+  {/* <h2 className="text-3xl font-bold text-gray-900 mb-3">
     Meet <span className="text-gray-800 border-b-2 border-gray-900 animate-pulse">BurgerAI</span> 🤖
-  </h2>
+  </h2> */}
 
   {/* Buttons */}
-  <section className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center gap-6 mb-12">
+  {/* <section className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center gap-6 mb-12">
     <button
       onClick={() => setSelectedIntro("whoami")}
       className="w-50 px-8 py-2 bg-white text-gray-900 border border-gray-300
@@ -237,10 +238,10 @@ hover:bg-gray-100
       How I am Made
     </button>
   </section>
-</section>
+</section> */}
 
 {/* Intro Modal */}
-{selectedIntro && (
+{/* {selectedIntro && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white rounded-2xl max-w-xl w-full p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
       <button
@@ -248,8 +249,8 @@ hover:bg-gray-100
 setSelectedIntro(null);
   setSelectedProject(null);
   setZoomedImage(null); 
-}}
-
+}} */}
+{/* 
   className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 font-bold text-2xl"
 >
   ×
@@ -272,9 +273,9 @@ setSelectedIntro(null);
   />
 </div>
           </div>
-        </>
-      )}
-
+        </> */}
+      {/* )} */}
+{/* 
       {selectedIntro === "how" && (
         <>
           <h3 className="text-2xl font-bold mb-2">How I am Made</h3>
@@ -301,12 +302,12 @@ setSelectedIntro(null);
         </>
       )}
     </div>
-  </div>
-)}
+  </div> */}
+{/* )} */}
 
 
       {/* Chatbot */}
-      <section className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 mb-10">
+      {/* <section className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 mb-10">
         <h2 className="text-2xl font-semibold mb-3 text-gray-900">Ask BurgerAI</h2>
         <div className="flex flex-col gap-2 h-60 overflow-y-auto mb-3 border border-gray-300 p-3 rounded bg-gray-50">
           {messages.length === 0 && (
@@ -343,7 +344,7 @@ setSelectedIntro(null);
             Send
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* Projects */}
       <section className="max-w-4xl mx-auto mb-12">
@@ -355,7 +356,7 @@ setSelectedIntro(null);
               className="bg-white rounded-2xl shadow-lg p-8 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               <h3 className="text-2xl font-bold mb-1 text-gray-900">{project.name}</h3>
-              <p className="text-gray-500 text-base mb-1">{project.domain}</p>
+              <p className="text-gray-500 font-bold text-base mb-1">{project.domain}</p>
               <p className="text-gray-400 text-sm mb-4">{project.dates}</p>
               <p className="text-gray-700 text-lg mb-6">{project.shortDesc}</p>
               <button
@@ -402,15 +403,8 @@ setSelectedIntro(null);
 <img
   src={selectedProject.architectureImg}
   alt={`${selectedProject.name} architecture`}
-  className={`w-full rounded-lg shadow-md border cursor-zoom-in transition-transform hover:scale-[1.01]`}
-  onClick={(e) => {
-    const rect = (e.target as HTMLImageElement).getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-    setZoomOrigin({ x, y });
-    setZoomedImage(selectedProject.architectureImg ?? null);
-  }}
+  className="w-full rounded-lg shadow-md border cursor-pointer"
+  onClick={() => setZoomedImage(selectedProject.architectureImg ?? null)}
 />
 
   </div>
@@ -432,22 +426,17 @@ setSelectedIntro(null);
     {/* Zoomed Image Modal */}
 {zoomedImage && (
   <div
-    className="fixed inset-0 bg-black bg-opacity-80 z-[60] flex items-center justify-center cursor-zoom-out"
+    className="fixed inset-0 bg-black bg-opacity-90 z-[60] flex items-center justify-center"
     onClick={() => setZoomedImage(null)}
   >
     <img
       src={zoomedImage}
-      alt="Zoomed architecture"
-      className="max-w-[95vw] max-h-[95vh] rounded-lg shadow-2xl"
-      style={{
-        transformOrigin: `${zoomOrigin.x}% ${zoomOrigin.y}%`,
-        transform: "scale(2)", // adjust scale as needed
-      }}
-      onClick={(e) => setZoomedImage(null)}
+      alt="Architecture Diagram"
+      className="max-w-full max-h-full object-contain"
+      onClick={(e) => e.stopPropagation()}
     />
   </div>
 )}
-
 
           </div>
         </div>

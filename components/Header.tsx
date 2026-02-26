@@ -25,6 +25,13 @@ export default function Header() {
         </Link>
 
         <Link
+          href="/credentials"
+          className="px-4 py-2 border border-gray-700 rounded-xl text-gray-300 hover:border-gray-500 transition"
+        >
+          Credentials
+        </Link>
+
+        <Link
           href="/#contact"
           className="px-4 py-2 border border-gray-700 rounded-xl text-gray-300 hover:border-gray-500 transition"
         >
