@@ -8,6 +8,7 @@ type Project = {
   image?: string;
   link?: string;
   attachments?: { name: string; url: string }[];
+  keyLearnings?: string[];
 };
 
 const projects: Record<string, Project> = {
@@ -38,6 +39,12 @@ Key points:
       { name: "KNN Chatbot Price Pred.html", url: "/projects/KNN Chatbot Price Pred.html" },
       { name: "Chatbot Pricing Data - KNN Data.csv", url: "/projects/Chatbot_Pricing_Data_KNN.csv" },
     ],
+    keyLearnings: [
+      "Applied KNN regression to predict chatbot conversation cost using early interaction signals.",
+      "Learned importance of feature normalization and early feature selection.",
+      "Recognized limitations: outliers, noisy data, rare expensive cases.",
+      "Potential improvements: try tree-based models, increase dataset size, include more features for better accuracy."
+    ],
   },
   "chatbot-satisfaction-classification": {
     title: "Predicting Chatbot Conversation Success",
@@ -67,7 +74,13 @@ Key points:
     attachments: [
       { name: "Chatbot Conversation Success - Classification.html", url: "/projects/Predict Conversation Success Satisfaction.html" },
       { name: "Chatbot Conversation Data - Classification.csv", url: "/projects/Chatbot_Conversation_Data.csv" }
-    ]
+    ],
+    keyLearnings: [
+      "Applied multiple classification models to predict chatbot conversation success.",
+      "Learned the importance of handling class imbalance and feature encoding.",
+      "Recognized limitations: small dataset, low recall for minority class, missing text embeddings.",
+      "Potential improvements: oversampling minority class, include NLP embeddings, tune model hyperparameters, experiment with ensemble models."
+    ],
 },
 };
 
@@ -121,14 +134,13 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
       )} */}
 
       <div className="mt-6">
-        <h2 className="text-2xl font-semibold mb-2">Key Learnings</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-700">
-          <li>Applied KNN regression to real-world chatbot cost estimation</li>
-          <li>Learned importance of feature normalization and early interaction signals</li>
-          <li>Understood limitations: outliers, noisy data, rare expensive cases</li>
-          <li>Practiced model evaluation using RMSE and predictive reasoning</li>
-        </ul>
-      </div>
+  <h2 className="text-2xl font-semibold mb-2">Key Learnings & Conclusions</h2>
+  <ul className="list-disc list-inside space-y-1 text-gray-700">
+    {project.keyLearnings?.map((learning, idx) => (
+      <li key={idx}>{learning}</li>
+    ))}
+  </ul>
+</div>
     </div>
   );
 }
