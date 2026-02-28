@@ -15,6 +15,13 @@ const projects: Project[] = [
     shortDesc: "KNN regression to predict chatbot conversation cost using early interaction signals.",
     image: "/images/chatbot_knn.png",
   },
+  {
+    slug: "chatbot-satisfaction-classification",
+    title: "Predicting Chatbot Conversation Success",
+    shortDesc: "Classification models to predict chatbot conversation success using early interaction signals.",
+    image: "/images/chatbot_satisfaction.jpeg",
+  },
+
 ];
 
 export default function DataPipelinesPage() {
