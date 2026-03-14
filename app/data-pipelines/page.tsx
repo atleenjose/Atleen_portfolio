@@ -19,7 +19,13 @@ const projects: Project[] = [
     slug: "chatbot-satisfaction-classification",
     title: "Predicting Chatbot Conversation Success",
     shortDesc: "Classification models to predict chatbot conversation success using early interaction signals.",
-    image: "/images/chatbot_satisfaction.jpeg",
+    image: "/images/classification.png",
+  },
+  {
+  slug: "ai-knowledge-base-optimization",
+  title: "AI Knowledge Base Optimization with Random Forest",
+  shortDesc: "Random Forest model to predict success of AI knowledge base queries.",
+  image: "/images/knowledge_optimization.png",
   },
 
 ];
