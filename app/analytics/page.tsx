@@ -6,54 +6,89 @@ export default function AnalyticsPage() {
     <div className="bg-black text-white min-h-screen">
       <Header />
 
-      <section className="min-h-screen px-8 py-20">
+      <section className="px-6 pt-28 pb-24">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl text-gray-300 font-bold mb-6">Analytics Dashboards</h1>
-          <p className="text-gray-300 text-lg max-w-3xl mb-16">
-            A collection of data analytics dashboards built using Tableau, SQL, and structured analytical frameworks. Each dashboard translates business questions into measurable KPIs, dimensions, and actionable insights.
-          </p>
 
-          <div className="space-y-20">
+          <div className="mb-14">
+            <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">Tableau · SQL</p>
+            <h1 className="text-5xl font-bold mb-4 text-gray-100">Analytics Dashboards</h1>
+            <p className="text-gray-400 text-lg max-w-2xl">
+              Stakeholder-focused dashboards translating business questions into KPIs, dimensions, and decision-ready visualizations.
+            </p>
+          </div>
+
+          <div className="space-y-6">
             {/* Dashboard 1 */}
-            <div className="
-  bg-neutral-900/60 backdrop-blur
-  border border-white/10
-  rounded-2xl p-10
-  hover:border-white/30 transition-all
-">
-              <h2 className="text-3xl font-semibold mb-4">Credit Card Customer Retention</h2>
-              <p className="text-gray-300 mb-7 max-w-5xl">
-                A retention-focused analytics dashboard comparing customers who churn with those who stay, highlighting behavioral and demographic drivers of attrition.
-              </p>
-              <Link
-                href="/analytics/credit-card-retention"
-                className="inline-block px-6 py-3 bg-white text-black rounded-xl font-medium hover:opacity-90 transition"
-              >
-                View More
-              </Link>
+            <div className="bg-neutral-900/50 border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all group">
+              <div className="flex items-start justify-between gap-6 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Tableau</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Customer Analytics</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Churn Analysis</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Credit Card Customer Retention</h2>
+                  <p className="text-gray-400 leading-relaxed max-w-2xl text-sm">
+                    Retention-focused dashboard comparing customers who churn with those who stay, highlighting behavioral and demographic drivers of attrition. Enables proactive retention strategies by identifying high-risk customer segments.
+                  </p>
+                </div>
+                <div className="flex gap-3 shrink-0 flex-wrap">
+                  <a
+                    href="https://public.tableau.com/app/profile/atleen.jose/viz/CreditCardRetentionAnalysis/Dashboard1#1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 border border-white/20 text-sm text-gray-300 rounded-xl hover:border-white/40 hover:text-white transition"
+                  >
+                    Tableau ↗
+                  </a>
+                  <Link
+                    href="/analytics/credit-card-retention"
+                    className="px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-gray-200 transition"
+                  >
+                    View details
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Dashboard 2 */}
-            <div className="
-  bg-neutral-900/60 backdrop-blur
-  border border-white/10
-  rounded-2xl p-10
-  hover:border-white/30 transition-all
-">
-            <h2 className="text-3xl font-semibold mb-4">
-                Sales Quantity Analysis (2022–2023)
-            </h2>
-            <p className="text-gray-300 mb-7 max-w-5xl">
-                A comparative analysis of sales quantity trends across two years,
-                highlighting growth patterns, seasonality, and performance shifts.
-            </p>
-            <Link
-                href="/analytics/sales-quantity"
-                className="inline-block px-6 py-3 bg-white text-black rounded-xl font-medium hover:opacity-90 transition"
-            >
-                View More
-            </Link>
+            <div className="bg-neutral-900/50 border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all group">
+              <div className="flex items-start justify-between gap-6 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Tableau</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Sales Analytics</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Time-Series</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Sales Quantity Analysis (2022–2023)</h2>
+                  <p className="text-gray-400 leading-relaxed max-w-2xl text-sm">
+                    Comparative analysis of sales quantity trends across two years, highlighting growth patterns, seasonality, and performance shifts. Supports inventory planning and strategic decision-making.
+                  </p>
+                </div>
+                <div className="flex gap-3 shrink-0 flex-wrap">
+                  <a
+                    href="https://public.tableau.com/app/profile/atleen.jose/viz/SalesQuantity20222023Analysis/Dashboard1#1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 border border-white/20 text-sm text-gray-300 rounded-xl hover:border-white/40 hover:text-white transition"
+                  >
+                    Tableau ↗
+                  </a>
+                  <Link
+                    href="/analytics/sales-quantity"
+                    className="px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-gray-200 transition"
+                  >
+                    View details
+                  </Link>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-10">
+            <Link href="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition">
+              ← Back to home
+            </Link>
           </div>
         </div>
       </section>

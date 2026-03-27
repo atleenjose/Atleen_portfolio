@@ -1,5 +1,6 @@
-// app/data-pipelines/[slug]/page.tsx
 import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Link from "next/link";
 
 type Project = {
   title: string;
@@ -7,6 +8,7 @@ type Project = {
   dataPipeline: string[];
   image?: string;
   link?: string;
+  tags: string[];
   attachments?: { name: string; url: string }[];
   keyLearnings?: string[];
 };
@@ -14,20 +16,11 @@ type Project = {
 const projects: Record<string, Project> = {
   "chatbot-cost-knn": {
     title: "Predicting Chatbot Conversation Cost",
-    description: `
-Worked as an AI and backend Engineer specializing in NLP and LLMs to estimate the cost of chatbot conversations.
-Used KNN regression to predict total conversation cost early, based on first 5 minutes of interaction.
-
-Key points:
-- Mock dataset inspired by real chatbot logs
-- X variables: messages, tokens, average tokens per message, model tier, subscription tier
-- Y variable: total conversation cost in USD
-- Features normalized since KNN is distance-based
-- Model tuned using RMSE; limitations: noise sensitivity, outliers, rare expensive cases
-    `,
+    tags: ["KNN", "Python", "Regression", "scikit-learn"],
+    description: `Used KNN regression to predict the total cost of a chatbot conversation early — based on the first 5 minutes of interaction signals. Built on a mock dataset inspired by real chatbot logs, this project demonstrates how early behavioral features can predict resource consumption.`,
     dataPipeline: [
       "Load mock chatbot conversation dataset (CSV)",
-      "Clean and normalize features",
+      "Clean and normalize features (distance-based model requires normalization)",
       "Split dataset into train and test sets",
       "Train KNN regressor and tune neighbors using RMSE",
       "Evaluate predictions on test set",
@@ -36,150 +29,171 @@ Key points:
     image: "/images/chatbot_knn.png",
     link: "/projects/KNN Chatbot Price Pred.html",
     attachments: [
-      { name: "KNN Chatbot Price Pred.html", url: "/projects/KNN Chatbot Price Pred.html" },
-      { name: "Chatbot Pricing Data - KNN Data.csv", url: "/projects/Chatbot_Pricing_Data_KNN.csv" },
+      { name: "KNN Chatbot Price Prediction (Interactive Notebook)", url: "/projects/KNN Chatbot Price Pred.html" },
+      { name: "Dataset CSV", url: "/projects/Chatbot Pricing Data - KNN Data.csv" },
     ],
     keyLearnings: [
       "Applied KNN regression to predict chatbot conversation cost using early interaction signals.",
-      "Learned importance of feature normalization and early feature selection.",
+      "Learned importance of feature normalization and early feature selection for distance-based models.",
       "Recognized limitations: outliers, noisy data, rare expensive cases.",
-      "Potential improvements: try tree-based models, increase dataset size, include more features for better accuracy."
+      "Potential improvements: tree-based models, larger dataset, additional features for better accuracy.",
     ],
   },
   "chatbot-satisfaction-classification": {
     title: "Predicting Chatbot Conversation Success",
-    description: `
-Worked as an AI and backend engineer to analyze and predict user satisfaction in chatbot conversations.
-Used KNN, Logistic Regression, LDA, and QDA to classify early whether a conversation would succeed or fail, based on behavioral and system features from the first few minutes.
-
-Key points:
-- Mock dataset inspired by real chatbot logs with ~700 conversations
-- X variables: message count, tokens, average tokens per message, model tier, user tier, response time, engagement intensity, model-user interaction, question type
-- Y variable: conversation_success (0 = failed / dissatisfied, 1 = successful / satisfied)
-- Features normalized and categorical features one-hot encoded for distance-based and linear models
-- KNN tuned for neighbors, Logistic Regression / LDA / QDA evaluated for linear/nonlinear separation
-- Limitations: class imbalance, small sample size, features without text embeddings, low recall for minority class
-    `,
+    tags: ["Classification", "Logistic Regression", "LDA", "QDA", "scikit-learn"],
+    description: `Analyzed and predicted user satisfaction in chatbot conversations using multiple classification models. Using behavioral and system features from the first few minutes of interaction, the goal was to classify early whether a conversation would succeed or fail — enabling proactive intervention.`,
     dataPipeline: [
-      "Load mock chatbot conversation dataset (CSV)",
-      "Clean and normalize numeric features; encode categorical features",
-      "Engineer additional features: cost per message, engagement intensity, model-user interaction, response time",
-      "Split dataset into train and test sets (80/20) with stratification",
+      "Load mock chatbot conversation dataset (~700 conversations)",
+      "Clean and normalize numeric features; one-hot encode categorical features",
+      "Engineer features: cost per message, engagement intensity, model-user interaction, response time",
+      "Split dataset into train/test sets (80/20) with stratification",
       "Train and evaluate KNN, Logistic Regression, LDA, and QDA classifiers",
-      "Visualize confusion matrices and calculate precision, recall, and F1-score",
-      "Analyze model performance, limitations, and potential improvements for deployment"
+      "Visualize confusion matrices; calculate precision, recall, and F1-score",
+      "Analyze model performance, limitations, and deployment considerations",
     ],
     image: "/images/classification.png",
     link: "/projects/Predict Conversation Success Satisfaction.html",
     attachments: [
-      { name: "Chatbot Conversation Success - Classification.html", url: "/projects/Predict Conversation Success Satisfaction.html" },
-      { name: "Chatbot Conversation Data - Classification.csv", url: "/projects/Chatbot_Conversation_Data.csv" }
+      { name: "Conversation Success Classification (Interactive Notebook)", url: "/projects/Predict Conversation Success Satisfaction.html" },
+      { name: "Dataset CSV", url: "/projects/Chatbot_Conversation_Data.csv" },
     ],
     keyLearnings: [
       "Applied multiple classification models to predict chatbot conversation success.",
       "Learned the importance of handling class imbalance and feature encoding.",
       "Recognized limitations: small dataset, low recall for minority class, missing text embeddings.",
-      "Potential improvements: oversampling minority class, include NLP embeddings, tune model hyperparameters, experiment with ensemble models."
+      "Potential improvements: oversampling, NLP embeddings, ensemble models, hyperparameter tuning.",
     ],
   },
   "ai-knowledge-base-optimization": {
     title: "AI Knowledge Base Optimization with Random Forest",
-    description: `
-  Analyzed enterprise-style AI support conversations to understand why some user queries succeed while others fail.
-  Built a machine learning pipeline using Random Forest to predict query success and identify drivers of knowledge retrieval performance.
-
-  Key points:
-  - Mock dataset inspired by real AI support and knowledge base interaction logs (~740 conversations)
-  - X variables: message count, tokens, average tokens per message, model tier, user tier, retrieval method, retrieval time, conversation duration, query complexity
-  - Y variable: answer_success (0 = failed retrieval / escalation, 1 = successful knowledge base response)
-  - Feature engineering included encoding categorical variables and normalizing behavioral signals
-  - Random Forest chosen for robustness to nonlinear relationships and feature interactions
-  - Model evaluated using confusion matrix, accuracy, and feature importance analysis
-  - Insights used to identify knowledge gaps, retrieval inefficiencies, and query complexity challenges
-      `,
+    tags: ["Random Forest", "Feature Importance", "Python", "scikit-learn"],
+    description: `Analyzed enterprise-style AI support conversations to understand why some queries succeed while others fail. Built a machine learning pipeline using Random Forest to predict query success and identify the key drivers of knowledge retrieval performance — useful for optimizing AI support systems.`,
     dataPipeline: [
-      "Load AI knowledge base interaction dataset",
+      "Load AI knowledge base interaction dataset (~740 conversations)",
       "Clean dataset and encode categorical variables (query category, retrieval method, model tier)",
-      "Engineer behavioral features such as conversation duration and query complexity encoding",
+      "Engineer behavioral features: conversation duration, query complexity",
       "Split dataset into training and testing sets",
       "Train Random Forest classifier to predict query success",
-      "Evaluate model performance using confusion matrix and classification metrics",
+      "Evaluate with confusion matrix and classification metrics",
       "Analyze feature importance to identify factors affecting AI retrieval success",
-      "Perform exploratory analysis on query categories, knowledge article effectiveness, and escalation patterns"
+      "Explore query categories, knowledge article effectiveness, and escalation patterns",
     ],
     image: "/images/knowledge_optimization.png",
     link: "/projects/rf-knowledge-base-optimization.html",
     attachments: [
-      { name: "rf-knowledge-base-optimization.html", url: "/projects/rf-knowledge-base-optimization.html" },
-      { name: "ai_kb_analysis_dataset.csv", url: "/projects/ai_kb_analysis_dataset.csv" }
+      { name: "Knowledge Base Optimization (Interactive Notebook)", url: "/projects/rf-knowledge-base-optimization.html" },
+      { name: "Dataset CSV", url: "/projects/ai_kb_analysis_dataset.csv" },
     ],
     keyLearnings: [
-      "Applied Random Forest models to predict success of AI knowledge base queries.",
-      "Learned how conversation features such as query complexity and retrieval method affect success rates.",
-      "Used confusion matrix evaluation to identify cases where AI systems incorrectly predict successful retrieval.",
-      "Recognized the importance of knowledge article coverage and retrieval strategy in AI support systems.",
-      "Potential improvements: add NLP embeddings from query text, apply clustering to detect query patterns, integrate interactive dashboards using Power BI."
+      "Applied Random Forest to predict success of AI knowledge base queries.",
+      "Learned how conversation features like query complexity and retrieval method affect success rates.",
+      "Used confusion matrix evaluation to identify incorrect retrieval predictions.",
+      "Recognized importance of knowledge article coverage and retrieval strategy in AI support systems.",
+      "Potential improvements: NLP embeddings from query text, clustering, Power BI dashboards.",
     ],
   },
 };
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
-export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {
+export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = projects[slug];
   if (!project) return notFound();
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
+    <div className="bg-black text-white min-h-screen">
+      <Header />
 
-      <p className="mb-6 whitespace-pre-line text-gray-700">{project.description}</p>
+      <section className="px-6 pt-28 pb-24">
+        <div className="max-w-4xl mx-auto">
 
-      <h2 className="text-2xl font-semibold mb-2">Data Pipeline Steps</h2>
-      <ol className="list-decimal list-inside mb-6 text-gray-700">
-        {project.dataPipeline.map((step, idx) => (
-          <li key={idx}>{step}</li>
-        ))}
-      </ol>
+          {/* Breadcrumb */}
+          <div className="mb-8">
+            <Link href="/data-pipelines" className="text-sm text-gray-500 hover:text-white transition">
+              ← ML & Data Projects
+            </Link>
+          </div>
 
-      {project.attachments && project.attachments.length > 0 && (
-  <div className="mt-6">
-    <h2 className="text-2xl font-semibold mb-2">Interactive Notebooks</h2>
-    {project.attachments
-      .filter((file) => file.name.endsWith(".html"))
-      .map((file, idx) => (
-        <div key={idx} className="mb-6">
-          <h3 className="text-lg font-semibold mb-2">{file.name}</h3>
-          <iframe
-            src={file.url}
-            className="w-full h-[600px] border rounded-lg"
-            title={file.name}
-          />
+          {/* Title */}
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tags.map((tag) => (
+                <span key={tag} className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h1 className="text-4xl font-bold text-gray-100 mb-4">{project.title}</h1>
+            <p className="text-gray-400 leading-relaxed">{project.description}</p>
+          </div>
+
+          {/* Image */}
+          {project.image && (
+            <div className="mb-10 rounded-2xl overflow-hidden border border-white/10">
+              <img src={project.image} alt={project.title} className="w-full object-cover" />
+            </div>
+          )}
+
+          {/* Pipeline Steps */}
+          <div className="mb-10 bg-white/5 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-lg font-semibold mb-5 text-gray-100">Data Pipeline</h2>
+            <ol className="space-y-3">
+              {project.dataPipeline.map((step, idx) => (
+                <li key={idx} className="flex gap-4 items-start text-sm text-gray-400">
+                  <span className="flex-shrink-0 w-6 h-6 bg-white/8 border border-white/15 rounded-full flex items-center justify-center text-xs text-gray-400 font-medium">
+                    {idx + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Key Learnings */}
+          <div className="mb-10 bg-white/5 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-lg font-semibold mb-4 text-gray-100">Key Learnings</h2>
+            <ul className="space-y-2">
+              {project.keyLearnings?.map((learning, idx) => (
+                <li key={idx} className="text-gray-400 text-sm flex gap-2">
+                  <span className="text-gray-600 mt-1">·</span> {learning}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Attachments & Interactive Notebooks */}
+          {project.attachments && (
+            <div className="mb-10">
+              <h2 className="text-lg font-semibold mb-5 text-gray-100">Interactive Notebooks</h2>
+              {project.attachments
+                .filter((f) => f.name.toLowerCase().endsWith(".html") || f.url.toLowerCase().endsWith(".html"))
+                .map((file, idx) => (
+                  <div key={idx} className="mb-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-sm text-gray-400">{file.name}</p>
+                      <a
+                        href={file.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-gray-500 hover:text-white transition underline underline-offset-2"
+                      >
+                        Open in new tab ↗
+                      </a>
+                    </div>
+                    <iframe
+                      src={file.url}
+                      className="w-full h-[600px] border border-white/10 rounded-xl bg-white"
+                      title={file.name}
+                    />
+                  </div>
+                ))}
+            </div>
+          )}
+
         </div>
-      ))}
-  </div>
-)}
-
-      {/* {project.link && (
-        <div className="mt-6">
-          <h2 className="text-2xl font-semibold mb-2">Interactive Notebook Preview</h2>
-          <iframe
-  src="/projects/KNN Chatbot Price Pred.html"
-  className="w-full h-[600px] border rounded-lg"
-  title={project.title}
-/>
-        </div>
-      )} */}
-
-      <div className="mt-6">
-  <h2 className="text-2xl font-semibold mb-2">Key Learnings & Conclusions</h2>
-  <ul className="list-disc list-inside space-y-1 text-gray-700">
-    {project.keyLearnings?.map((learning, idx) => (
-      <li key={idx}>{learning}</li>
-    ))}
-  </ul>
-</div>
+      </section>
     </div>
   );
 }
