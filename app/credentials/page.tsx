@@ -266,6 +266,24 @@ export default function Credentials() {
                 ))}
               </ul>
             </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 className="text-sm font-medium text-gray-300 mb-3">
+                Excel End-to-End Analytics Project
+              </h3>
+              <ul className="space-y-2">
+                {[
+                  "Building an end-to-end analytics workflow entirely in Excel covering data cleaning, processing, analysis, and visualization",
+                  "Using Ablebits for advanced data cleaning and transformation",
+                  "Leveraging Pivot Tables and Pivot Charts for exploratory data analysis",
+                  "Applying Crystal Ball for simulation, forecasting, and predictive modeling",
+                  "Designing interactive dashboards to present key business insights and trends",
+                ].map((item) => (
+                  <li key={item} className="text-gray-400 text-sm flex gap-2">
+                    <span className="text-gray-600 mt-1">·</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
 
           {/* Back */}
