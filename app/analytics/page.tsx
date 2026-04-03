@@ -18,6 +18,7 @@ export default function AnalyticsPage() {
           </div>
 
           <div className="space-y-6">
+
             {/* Dashboard 1 */}
             <div className="bg-neutral-900/50 border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all group">
               <div className="flex items-start justify-between gap-6 flex-wrap">
@@ -83,6 +84,40 @@ export default function AnalyticsPage() {
                 </div>
               </div>
             </div>
+
+            {/* Dashboard 3 */}
+            <div className="bg-neutral-900/50 border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all group">
+              <div className="flex items-start justify-between gap-6 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Tableau</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">AI Analytics</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Cost Optimization</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Chatbot Analytics — AI Model Performance</h2>
+                  <p className="text-gray-400 leading-relaxed max-w-2xl text-sm">
+                    Advanced analytics dashboard tracking 500 AI chatbot sessions across GPT-4, Claude 3, and Gemini Pro spanning 18 countries and three user tiers. Surfaces cost efficiency, token usage patterns, geographic demand, and model performance to support smarter AI spend decisions.
+                  </p>
+                </div>
+                <div className="flex gap-3 shrink-0 flex-wrap">
+                  <a
+                    href="https://public.tableau.com/views/Advancedchartsmockdata/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 border border-white/20 text-sm text-gray-300 rounded-xl hover:border-white/40 hover:text-white transition"
+                  >
+                    Tableau ↗
+                  </a>
+                  <Link
+                    href="/analytics/chatbot-analytics"
+                    className="px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-gray-200 transition"
+                  >
+                    View details
+                  </Link>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div className="mt-10">
