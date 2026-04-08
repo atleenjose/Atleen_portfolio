@@ -177,7 +177,7 @@ Key focus areas included:
         {/* Resume & GitHub */}
       <section className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center gap-6 mb-12">
         <a
-          href="/Atleen_Jose_Resume.pdf"
+          href="/Resume_AtleenJose.pdf"
           target="_blank"
           className="w-50 px-8 py-2 bg-white text-gray-900 border border-gray-300
 hover:bg-gray-100

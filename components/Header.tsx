@@ -29,7 +29,7 @@ export default function Header() {
             Contact
           </Link>
           <a
-            href="/Atleen_Jose_Resume.pdf"
+            href="/Resume_AtleenJose.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 px-4 py-1.5 text-sm font-medium bg-white text-black rounded-lg hover:bg-gray-200 transition"
@@ -59,7 +59,7 @@ export default function Header() {
           <Link href="/#work" onClick={() => setMenuOpen(false)} className="py-2 text-sm text-gray-300 hover:text-white transition">Work</Link>
           <Link href="/credentials" onClick={() => setMenuOpen(false)} className="py-2 text-sm text-gray-300 hover:text-white transition">Credentials</Link>
           <Link href="/#contact" onClick={() => setMenuOpen(false)} className="py-2 text-sm text-gray-300 hover:text-white transition">Contact</Link>
-          <a href="/Atleen_Jose_Resume.pdf" target="_blank" rel="noopener noreferrer" className="py-2 text-sm text-white font-medium">Resume ↗</a>
+          <a href="/Resume_AtleenJose.pdf" target="_blank" rel="noopener noreferrer" className="py-2 text-sm text-white font-medium">Resume ↗</a>
         </div>
       )}
     </header>

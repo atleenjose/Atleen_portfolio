@@ -32,7 +32,7 @@ const workItems = [
     tag: "Python · scikit-learn",
   },
   {
-    title: "AI & NLP Systems",
+    title: "Industry Projects",
     description:
       "Conversational AI platforms, HR chatbots, and NLP pipelines integrating LLMs, Rasa, Elasticsearch, and real-time data systems.",
     href: "/ai-nlp-systems",
@@ -80,7 +80,7 @@ export default function Page() {
               View my work
             </a>
             <a
-              href="/Atleen_Jose_Resume.pdf"
+              href="/Resume_AtleenJose.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 border border-white/20 text-gray-300 rounded-xl hover:border-white/40 hover:text-white transition text-sm"
@@ -140,7 +140,7 @@ export default function Page() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">What I Build</p>
-            <h2 className="text-4xl font-semibold">Work & Projects</h2>
+            <h2 className="text-4xl font-semibold">Works & Projects</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -186,14 +186,6 @@ export default function Page() {
                 <div className="font-medium text-gray-100">Software Engineer</div>
                 <div className="text-sm text-gray-400">Sinergia Media Labs · Kerala, India</div>
                 <div className="text-sm text-gray-500 mt-1">AI chatbots, NLP pipelines, analytics dashboards, backend data systems</div>
-              </div>
-            </div>
-            <div className="border-t border-white/5 pt-5 flex gap-6 items-start">
-              <div className="text-xs text-gray-500 w-24 shrink-0 pt-1">2025–2026</div>
-              <div>
-                <div className="font-medium text-gray-100">MS Business Analytics (GPA 3.78)</div>
-                <div className="text-sm text-gray-400">Fox School of Business, Temple University</div>
-                <div className="text-sm text-gray-500 mt-1">Statistical Learning, ML, Time-Series, Optimization, Monte Carlo Simulation</div>
               </div>
             </div>
           </div>

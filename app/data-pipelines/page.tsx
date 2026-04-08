@@ -32,6 +32,13 @@ const projects: Project[] = [
     image: "/images/knowledge_optimization.png",
     tags: ["Random Forest", "Feature Importance", "Python"],
   },
+  {
+    slug: "global-homicide-analysis-ml",
+    title: "Global Homicide Rate Analysis & Forecasting",
+    shortDesc: "End-to-end ML pipeline using clustering, classification, regression, and time-series forecasting to analyze global homicide trends.",
+    image: "/images/homicide-analysis-ML.png",
+    tags: ["Clustering", "Classification", "Regression", "Time Series", "Python"],
+  },
 ];
 
 export default function DataPipelinesPage() {
