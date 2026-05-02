@@ -18,7 +18,7 @@ const projects: Record<string, Project> = {
   "chatbot-cost-knn": {
     title: "Predicting Chatbot Conversation Cost",
     tags: ["KNN", "Python", "Regression", "scikit-learn"],
-    description: `Used KNN regression to predict the total cost of a chatbot conversation early — based on the first 5 minutes of interaction signals. Built on a mock dataset inspired by real chatbot logs, this project demonstrates how early behavioral features can predict resource consumption.`,
+    description: `Used KNN regression to predict the total cost of a chatbot conversation early - based on the first 5 minutes of interaction signals. Built on a mock dataset inspired by real chatbot logs, this project demonstrates how early behavioral features can predict resource consumption.`,
     dataPipeline: [
       "Load mock chatbot conversation dataset (CSV)",
       "Clean and normalize features (distance-based model requires normalization)",
@@ -43,7 +43,7 @@ const projects: Record<string, Project> = {
   "chatbot-satisfaction-classification": {
     title: "Predicting Chatbot Conversation Success",
     tags: ["Classification", "Logistic Regression", "LDA", "QDA", "scikit-learn"],
-    description: `Analyzed and predicted user satisfaction in chatbot conversations using multiple classification models. Using behavioral and system features from the first few minutes of interaction, the goal was to classify early whether a conversation would succeed or fail — enabling proactive intervention.`,
+    description: `Analyzed and predicted user satisfaction in chatbot conversations using multiple classification models. Using behavioral and system features from the first few minutes of interaction, the goal was to classify early whether a conversation would succeed or fail - enabling proactive intervention.`,
     dataPipeline: [
       "Load mock chatbot conversation dataset (~700 conversations)",
       "Clean and normalize numeric features; one-hot encode categorical features",
@@ -69,7 +69,7 @@ const projects: Record<string, Project> = {
   "ai-knowledge-base-optimization": {
     title: "AI Knowledge Base Optimization with Random Forest",
     tags: ["Random Forest", "Feature Importance", "Python", "scikit-learn"],
-    description: `Analyzed enterprise-style AI support conversations to understand why some queries succeed while others fail. Built a machine learning pipeline using Random Forest to predict query success and identify the key drivers of knowledge retrieval performance — useful for optimizing AI support systems.`,
+    description: `Analyzed enterprise-style AI support conversations to understand why some queries succeed while others fail. Built a machine learning pipeline using Random Forest to predict query success and identify the key drivers of knowledge retrieval performance - useful for optimizing AI support systems.`,
     dataPipeline: [
       "Load AI knowledge base interaction dataset (~740 conversations)",
       "Clean dataset and encode categorical variables (query category, retrieval method, model tier)",
@@ -134,6 +134,29 @@ const projects: Record<string, Project> = {
       "Strengthened skills in data preprocessing, feature engineering, and model evaluation.",
     ],
   },
+  "enrollment-intelligence": {
+  title: "Student Enrollment Intelligence",
+  tags: ["ETL", "PostgreSQL", "Random Forest", "FastAPI", "Python", "PowerBI"],
+  description: `End-to-end data engineering and ML project predicting student dropout risk across 4,424 university students. Built a PostgreSQL star schema, ETL pipeline, Random Forest model with 90% accuracy, and served predictions via a FastAPI.`,
+  dataPipeline: [
+    "Ingested raw CSV dataset of 4,424 students with 35 features",
+    "Built ETL pipeline to clean, transform and load data into PostgreSQL",
+    "Designed star schema with fact_enrollments, dim_student, dim_course, dim_economics",
+    "Wrote KPI queries analyzing dropout by age, gender, scholarship, and academic performance",
+    "Trained Random Forest classifier achieving 90% accuracy predicting Dropout vs Graduate",
+    "Identified top features: semester grades, units approved, tuition status, scholarship",
+    "Built FastAPI to serve real-time dropout risk predictions with probability scores",
+  ],
+  image: "/images/PowerBI Dashboard Screenshot.png",
+  githubUrl: "https://github.com/atleenjose/enrollment-intelligence",
+  keyLearnings: [
+    "Built a complete data engineering pipeline from raw CSV to star schema in PostgreSQL.",
+    "Learned how to design dimensional models for analytical queries.",
+    "Applied Random Forest with class balancing to handle imbalanced dropout data.",
+    "Served ML predictions via a production-ready FastAPI with input validation.",
+    "Discovered that semester 1 grades and scholarship status are the strongest dropout predictors.",
+  ],
+},
 };
 
 type Props = { params: Promise<{ slug: string }> };
@@ -152,8 +175,8 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link href="/data-pipelines" className="text-sm text-gray-500 hover:text-white transition">
-              ← ML & Data Projects
+            <Link href="/data-ml-projects" className="text-sm text-gray-500 hover:text-white transition">
+              ← Data & ML Projects
             </Link>
           </div>
 

@@ -8,6 +8,14 @@ const techStack = [
   { label: "Power BI", icon: "📈" },
   { label: "BigQuery", icon: "☁️" },
   { label: "scikit-learn", icon: "🤖" },
+  { label: "Random Forest", icon: "🌲" },
+  { label: "Logistic Regression", icon: "📐" },
+  { label: "KNN", icon: "🔵" },
+  { label: "PCA", icon: "🔢" },
+  { label: "Clustering", icon: "🫧" },
+  { label: "Time Series", icon: "📈" },
+  { label: "PostgreSQL", icon: "🐘" },
+  { label: "FastAPI", icon: "⚡" },
   { label: "R", icon: "📉" },
   { label: "Django", icon: "🌐" },
   { label: "Docker", icon: "🐳" },
@@ -20,15 +28,15 @@ const workItems = [
   {
     title: "Analytics Dashboards",
     description:
-      "Stakeholder-focused dashboards using Tableau and SQL, translating business questions into KPIs, dimensions, and decision-ready visualizations.",
+      "Built executive Tableau dashboards for CEHD leadership tracking enrollment trends, student lifecycle milestones, and admission patterns - used in real semester reporting to the Assistant Dean.",
     href: "/analytics",
-    tag: "Tableau · SQL",
+    tag: "Power BI · Tableau · SQL",
   },
   {
-    title: "ML & Data Projects",
+    title: "Data & ML Projects",
     description:
-      "Supervised learning models — KNN, Logistic Regression, Random Forest — applied to real business classification and prediction problems.",
-    href: "/data-pipelines",
+      "Supervised learning models - KNN, Logistic Regression, Random Forest - applied to real business classification and prediction problems.",
+    href: "/data-ml-projects",
     tag: "Python · scikit-learn",
   },
   {
@@ -65,10 +73,15 @@ export default function Page() {
             Atleen Jose
           </h1>
           <p className="mt-4 text-lg text-gray-400 tracking-wide">
-            Business Intelligence & Analytics · AI · Backend Data Systems
+            Backend Development · Data Analyst · MS Business Analytics, Temple University · Open to DA / BI Analyst Roles
           </p>
           <p className="mt-6 text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            I turn raw data into decisions, building pipelines, dashboards, and AI systems that make complex information actionable.
+            I&apos;m a data analyst and MS Business Analytics student at Temple University (GPA 3.78),
+currently building academic data intelligence dashboards and pipelines for CEHD academic leadership.
+Before this, I spent 4 years in development - shipping AI chatbots, RAG pipelines, and analytics
+APIs used by real clients across Healthcare, EdTech and media.
+<br /><br />
+I don&apos;t just analyze data. I build the systems that make analysis possible.
           </p>
 
           {/* CTAs */}
@@ -97,11 +110,11 @@ export default function Page() {
             </div>
             <div className="text-center border-x border-white/10">
               <div className="text-2xl font-semibold">3.78</div>
-              <div className="text-xs text-gray-500 mt-1">GPA at Temple</div>
+              <div className="text-xs text-gray-500 mt-1">MS Business Analytics GPA</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-semibold">6+</div>
-              <div className="text-xs text-gray-500 mt-1">Projects shipped</div>
+              <div className="text-2xl font-semibold">2</div>
+              <div className="text-xs text-gray-500 mt-1">Industries: Tech + Academia</div>
             </div>
           </div>
         </div>

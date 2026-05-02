@@ -12,9 +12,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    slug: "enrollment-intelligence",
+    title: "Student Enrollment Intelligence",
+    shortDesc: "End-to-end data engineering and ML project predicting student dropout risk across 4,424 university students.",
+    image: "/images/PowerBI Dashboard Screenshot.png",
+    tags: ["ETL", "PostgreSQL", "Random Forest", "FastAPI", "Python", "PowerBI"],
+  },
+  {
     slug: "chatbot-cost-knn",
     title: "Predicting Chatbot Conversation Cost",
-    shortDesc: "KNN regression to predict chatbot conversation cost using early interaction signals — messages, tokens, model tier.",
+    shortDesc: "KNN regression to predict chatbot conversation cost using early interaction signals - messages, tokens, model tier.",
     image: "/images/chatbot_knn.png",
     tags: ["KNN", "Python", "Regression"],
   },
@@ -51,15 +58,15 @@ export default function DataPipelinesPage() {
 
           <div className="mb-14">
             <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">Machine Learning</p>
-            <h1 className="text-5xl font-bold mb-4 text-gray-100">ML & Data Projects</h1>
+            <h1 className="text-5xl font-bold mb-4 text-gray-100">Data & ML Projects</h1>
             <p className="text-gray-400 text-lg max-w-2xl">
-              Supervised learning models applied to real business problems — classification, regression, and feature analysis.
+              Supervised learning models applied to real business problems - classification, regression, and feature analysis.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project) => (
-              <Link key={project.slug} href={`/data-pipelines/${project.slug}`}>
+              <Link key={project.slug} href={`/data-ml-projects/${project.slug}`}>
                 <div className="group bg-neutral-900/50 border border-white/10 rounded-2xl overflow-hidden hover:border-white/25 transition-all duration-300 h-full flex flex-col">
                   {project.image && (
                     <div className="relative w-full h-48 overflow-hidden bg-neutral-900">

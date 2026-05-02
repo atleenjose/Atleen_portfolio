@@ -28,7 +28,7 @@ export default function ChatbotAnalyticsPage() {
                 Chatbot Analytics - AI Model Performance
               </h1>
               <p className="text-gray-400 leading-relaxed max-w-2xl">
-                Advanced analytics dashboard tracking 500 AI chatbot sessions across GPT-4, Claude 3, and Gemini Pro spanning 18 countries and three user tiers — surfacing cost efficiency, token usage, and geographic demand.
+                Advanced analytics dashboard tracking 500 AI chatbot sessions across GPT-4, Claude 3, and Gemini Pro spanning 18 countries and three user tiers - surfacing cost efficiency, token usage, and geographic demand.
               </p>
             </div>
             <a

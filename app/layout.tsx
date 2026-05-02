@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Atleen Jose — Business Intelligence & Analytics",
+  title: "Atleen Jose - Business Intelligence & Analytics",
   description:
-    "Portfolio of Atleen Jose — Graduate student in Business Analytics at Temple University. Specializing in data pipelines, analytics dashboards, AI/NLP systems, and business intelligence.",
+    "Portfolio of Atleen Jose - Graduate student in Business Analytics at Temple University. Specializing in data pipelines, analytics dashboards, AI/NLP systems, and business intelligence.",
   keywords: [
     "Business Intelligence",
     "Data Analytics",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Atleen Jose" }],
   openGraph: {
-    title: "Atleen Jose — Business Intelligence & Analytics",
+    title: "Atleen Jose - Business Intelligence & Analytics",
     description:
       "Data pipelines, analytics dashboards, AI/NLP systems, and business intelligence. Graduate student at Temple University Fox School of Business.",
     url: "https://atleenportfolio1.vercel.app",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Atleen Jose — Business Intelligence & Analytics",
+    title: "Atleen Jose - Business Intelligence & Analytics",
     description:
       "Data pipelines, analytics dashboards, AI/NLP systems, and business intelligence.",
   },

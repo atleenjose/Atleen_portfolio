@@ -10,7 +10,7 @@ export default function AnalyticsPage() {
         <div className="max-w-6xl mx-auto">
 
           <div className="mb-14">
-            <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">Tableau · SQL</p>
+            <p className="text-xs text-gray-500 uppercase tracking-widest mb-2">Power BI · Tableau · SQL</p>
             <h1 className="text-5xl font-bold mb-4 text-gray-100">Analytics Dashboards</h1>
             <p className="text-gray-400 text-lg max-w-2xl">
               Stakeholder-focused dashboards translating business questions into KPIs, dimensions, and decision-ready visualizations.
@@ -24,26 +24,18 @@ export default function AnalyticsPage() {
               <div className="flex items-start justify-between gap-6 flex-wrap">
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Tableau</span>
-                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Customer Analytics</span>
-                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Churn Analysis</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Power BI</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Education Analytics</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Dropout Risk</span>
                   </div>
-                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Credit Card Customer Retention</h2>
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Student Enrollment Intelligence</h2>
                   <p className="text-gray-400 leading-relaxed max-w-2xl text-sm">
-                    Retention-focused dashboard comparing customers who churn with those who stay, highlighting behavioral and demographic drivers of attrition. Enables proactive retention strategies by identifying high-risk customer segments.
+                    End-to-end analytics project analyzing dropout risk across 4,424 university students. Built on a PostgreSQL star schema with KPIs across age, gender, scholarship status, and academic performance. Paired with a Random Forest model achieving 90% accuracy in predicting student outcomes.
                   </p>
                 </div>
                 <div className="flex gap-3 shrink-0 flex-wrap">
-                  <a
-                    href="https://public.tableau.com/app/profile/atleen.jose/viz/CreditCardRetentionAnalysis/Dashboard1#1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 border border-white/20 text-sm text-gray-300 rounded-xl hover:border-white/40 hover:text-white transition"
-                  >
-                    Tableau ↗
-                  </a>
                   <Link
-                    href="/analytics/credit-card-retention"
+                    href="/analytics/enrollment-intelligence"
                     className="px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-gray-200 transition"
                   >
                     View details
@@ -94,7 +86,7 @@ export default function AnalyticsPage() {
                     <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">AI Analytics</span>
                     <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Cost Optimization</span>
                   </div>
-                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Chatbot Analytics — AI Model Performance</h2>
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Chatbot Analytics - AI Model Performance</h2>
                   <p className="text-gray-400 leading-relaxed max-w-2xl text-sm">
                     Advanced analytics dashboard tracking 500 AI chatbot sessions across GPT-4, Claude 3, and Gemini Pro spanning 18 countries and three user tiers. Surfaces cost efficiency, token usage patterns, geographic demand, and model performance to support smarter AI spend decisions.
                   </p>
@@ -118,6 +110,38 @@ export default function AnalyticsPage() {
               </div>
             </div>
 
+            {/* Dashboard 4 */}
+            <div className="bg-neutral-900/50 border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-all group">
+              <div className="flex items-start justify-between gap-6 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Tableau</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Customer Analytics</span>
+                    <span className="text-xs text-gray-400 bg-white/5 border border-white/10 rounded-md px-2 py-0.5">Churn Analysis</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold mb-3 text-gray-100">Credit Card Customer Retention</h2>
+                  <p className="text-gray-400 leading-relaxed max-w-2xl text-sm">
+                    Retention-focused dashboard comparing customers who churn with those who stay, highlighting behavioral and demographic drivers of attrition. Enables proactive retention strategies by identifying high-risk customer segments.
+                  </p>
+                </div>
+                <div className="flex gap-3 shrink-0 flex-wrap">
+                  <a
+                    href="https://public.tableau.com/app/profile/atleen.jose/viz/CreditCardRetentionAnalysis/Dashboard1#1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 border border-white/20 text-sm text-gray-300 rounded-xl hover:border-white/40 hover:text-white transition"
+                  >
+                    Tableau ↗
+                  </a>
+                  <Link
+                    href="/analytics/credit-card-retention"
+                    className="px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-gray-200 transition"
+                  >
+                    View details
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-10">
