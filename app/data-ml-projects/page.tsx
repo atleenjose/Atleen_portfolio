@@ -46,6 +46,13 @@ const projects: Project[] = [
     image: "/images/homicide-analysis-ML.png",
     tags: ["Clustering", "Classification", "Regression", "Time Series", "Python"],
   },
+  {
+    slug: "nyc-collision-injury-prediction",
+    title: "Predicting Injury Outcomes in NYC Motor Vehicle Collisions",
+    shortDesc: "Classification models predicting whether a NYC motor vehicle crash results in injury, using 44,879 crash records from NYC Open Data. Random Forest achieved the strongest ROC AUC of 0.70.",
+    image: "/images/ny-collisions-injury-prediction.webp",
+    tags: ["Random Forest", "Logistic Regression", "KNN", "Decision Tree", "Python"],
+  },
 ];
 
 export default function DataPipelinesPage() {
