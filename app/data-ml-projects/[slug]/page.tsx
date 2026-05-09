@@ -7,9 +7,11 @@ type Project = {
   description: string;
   dataPipeline: string[];
   image?: string;
+  image2?: string;
   link?: string;
   tags: string[];
   githubUrl?: string;
+  live_demo?: string;
   attachments?: { name: string; url: string }[];
   keyLearnings?: string[];
 };
@@ -136,25 +138,36 @@ const projects: Record<string, Project> = {
   },
   "enrollment-intelligence": {
     title: "Student Enrollment Intelligence",
-    tags: ["ETL", "PostgreSQL", "Random Forest", "FastAPI", "Python", "PowerBI"],
-    description: `End-to-end data engineering and ML project predicting student dropout risk across 4,424 university students. Built a PostgreSQL star schema, ETL pipeline, Random Forest model with 90% accuracy, and served predictions via a FastAPI.`,
+    tags: ["ETL", "PostgreSQL", "Random Forest", "Logistic Regression", "SHAP", "FastAPI", "Python", "PowerBI"],
+    description: `End-to-end data engineering and ML project predicting student dropout risk across 4,424 university students. Built a PostgreSQL star schema, ETL pipeline, validation layer, and synthetic data generation. Trained Random Forest (90% accuracy, ROC-AUC 0.95) with SHAP explainability, and served predictions via a live FastAPI deployed on Render.`,
     dataPipeline: [
-      "Ingested raw CSV dataset of 4,424 students with 35 features",
-      "Built ETL pipeline to clean, transform and load data into PostgreSQL",
+      "Ingested raw CSV dataset of 4,424 students with 35 features from Kaggle",
+      "Built ETL pipeline to clean, transform and load data into PostgreSQL star schema",
       "Designed star schema with fact_enrollments, dim_student, dim_course, dim_economics",
-      "Wrote KPI queries analyzing dropout by age, gender, scholarship, and academic performance",
-      "Trained Random Forest classifier achieving 90% accuracy predicting Dropout vs Graduate",
-      "Identified top features: semester grades, units approved, tuition status, scholarship",
-      "Built FastAPI to serve real-time dropout risk predictions with probability scores",
+      "Built validation layer flagging mismatched IDs, null statuses, and duplicate enrollment records",
+      "Generated synthetic financial_aid and applications tables using Faker (6,000+ rows)",
+      "Wrote KPI SQL queries analyzing dropout by age, gender, scholarship, and academic performance",
+      "Trained Random Forest classifier achieving 90% accuracy and 0.9478 ROC-AUC predicting Dropout vs Graduate",
+      "Added Logistic Regression as baseline model for comparison (ROC-AUC 0.9473)",
+      "Applied SHAP TreeExplainer for global feature importance and per-student dropout risk explanation",
+      "Top risk factors identified: semester approved units, semester grades, and tuition payment status",
+      "Built FastAPI with 3 endpoints - /predict (with SHAP reasons), /student_summary, /kpi_metrics",
+      "Deployed FastAPI on Render with cloud PostgreSQL on Neon",
     ],
     image: "/images/PowerBI Dashboard Screenshot.png",
+    image2: "/images/Enrollment-Intelligence-ML.png",
+    live_demo: "https://enrollment-intelligence.onrender.com/docs",
     githubUrl: "https://github.com/atleenjose/enrollment-intelligence",
     keyLearnings: [
       "Built a complete data engineering pipeline from raw CSV to star schema in PostgreSQL.",
       "Learned how to design dimensional models for analytical queries.",
       "Applied Random Forest with class balancing to handle imbalanced dropout data.",
-      "Served ML predictions via a production-ready FastAPI with input validation.",
-      "Discovered that semester 1 grades and scholarship status are the strongest dropout predictors.",
+      "Compared Random Forest vs Logistic Regression using ROC-AUC - RF won by a small margin showing tree models suit this data better.",
+      "Used SHAP to explain ML predictions at both global and per-student level - making the model actionable for advisors.",
+      "Served ML predictions via a production-ready FastAPI with input validation and SHAP risk factors in the response.",
+      "Deployed a full stack data project using Render and Neon - moving from localhost to a live public URL.",
+      "Discovered that semester approved units and tuition payment status are the strongest dropout predictors.",
+      "Scholarship holders graduate at nearly 2x the rate of non-scholarship students.",
     ],
   },
   "nyc-collision-injury-prediction": {
@@ -232,6 +245,11 @@ export default async function ProjectDetailPage({ params }: Props) {
               <img src={project.image} alt={project.title} className="w-full object-cover" />
             </div>
           )}
+          {project.image2 && (
+            <div className="mb-10 rounded-2xl overflow-hidden border border-white/10">
+              <img src={project.image2} alt={project.title} className="w-full object-cover" />
+            </div>
+          )}
 
           {/* Pipeline Steps */}
           <div className="mb-10 bg-white/5 border border-white/10 rounded-2xl p-6">
@@ -273,6 +291,32 @@ export default async function ProjectDetailPage({ params }: Props) {
           View on GitHub
         </a>
       )}
+        {project.live_demo && (
+          <a
+            href={project.live_demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white bg-white/5 border border-white/10 hover:border-white/20 rounded-lg px-4 py-2 transition mb-8"
+          >
+            {/* API / Terminal Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 6.75L3.75 12l4.5 5.25M15.75 6.75L20.25 12l-4.5 5.25"
+              />
+            </svg>
+
+            Explore the API
+          </a>
+        )}
 
           {/* Attachments & Interactive Notebooks */}
           {project.attachments && (
